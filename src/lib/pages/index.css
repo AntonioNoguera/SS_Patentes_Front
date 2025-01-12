@@ -1,0 +1,10 @@
+
+@import "@fontsource/poppins";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="text"]:focus {
+    @apply outline-none ring-0 ring-black border-black bg-gray-50;
+  }

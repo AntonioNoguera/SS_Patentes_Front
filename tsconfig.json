@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // Necesario para que TypeScript entienda los alias
+    "paths": {
+      "@pages/*": ["src/lib/pages/*"] // Mapea el alias al directorio correspondiente
+    },
+    "jsx": "react-jsx", // Manejo de JSX con React
+    "strict": true, // Recomendado para verificar tipos
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
