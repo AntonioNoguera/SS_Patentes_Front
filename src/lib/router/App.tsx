@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "@pages/login/LoginPage";
-import RegisterPage from "@pages/register/RegisterPage";
+import LoginPage from "@pages/auth/login/LoginPage";
+import RegisterPage from "@pages/auth/register/RegisterPage";
+import DashBoardPage from "@pages/home/DashBoardPage";
 
 const App: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={<DashBoardPage/>} />
       </Routes>
     </div>
   );
