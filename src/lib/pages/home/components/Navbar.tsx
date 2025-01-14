@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+
+  const linkStyles = "text-l font-medium text-black hover:text-gray-50";
+
   return (
     <nav className="bg-PtahBg text-white py-2 px-0 w-full overflow-hidden px-10">
       <div className=" w-full flex items-center">
@@ -15,25 +18,25 @@ function Navbar() {
           <li>
             <Link
               to="/"
-              className="text-l font-medium text-black"
+              className={linkStyles}
             >
-              Home
+              Item
             </Link>
           </li>
           <li>
             <Link
               to="/about"
-              className="text-l font-medium text-black"
+              className={linkStyles}
             >
-              About
+              Item
             </Link>
           </li>
           <li>
             <Link
               to="/contact"
-              className="text-l font-medium text-black"
+              className={linkStyles}
             >
-              Contact
+              Item
             </Link>
           </li>
         </ul>
