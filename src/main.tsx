@@ -13,10 +13,10 @@ if (!rootElement) throw new Error('Failed to find the root element');
 createRoot(rootElement).render(
   <BrowserRouter>
     <SnackbarProvider
-      maxSnack={3} // Número máximo de notificaciones visibles al mismo tiempo
+      maxSnack={3}
       anchorOrigin={{
         vertical: 'top',
-        horizontal: 'right', // Posición de las notificaciones
+        horizontal: 'right',
       }}
     >
       <App />

@@ -160,7 +160,7 @@ const RegisterPage: React.FC = () => {
 
             <button
               type="submit"
-              className="px-4 py-2 bg-activeBtn w-full text-white rounded-full hover:bg-hoverBtn"
+              className="btn-primary"
             >
               Enviar
             </button>
