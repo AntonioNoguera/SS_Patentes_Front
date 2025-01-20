@@ -79,7 +79,7 @@ const RegisterPage: React.FC = () => {
 
           <form className="m-0 p-0" onSubmit={handleSubmit}>
             {/* Fila 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <InputField
                 label="Correo personal"
                 placeholder="Escribe aquí..."
@@ -99,7 +99,7 @@ const RegisterPage: React.FC = () => {
             </div>
 
             {/* Fila 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <InputField
                 label="Teléfono"
                 placeholder="Escribe aquí..."
@@ -119,7 +119,7 @@ const RegisterPage: React.FC = () => {
             </div>
 
             {/* Fila 3 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <InputField
                 label="Carrera"
                 placeholder="Escribe aquí..."
@@ -139,7 +139,7 @@ const RegisterPage: React.FC = () => {
             </div>
 
             {/* Fila 4 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <InputField
                 label="Núm. de Empleado"
                 placeholder="Escribe aquí..."

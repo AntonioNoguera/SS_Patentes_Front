@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../shared/Navbar";
-import Footer from "../shared/Footer"; 
+import Footer from "../shared/Footer";
 import { NavLink } from "react-router-dom";
 
 function DashBoardPage() {
@@ -15,15 +15,13 @@ function DashBoardPage() {
           <h1 className="text-xl font-bold text-gray-800 flex-grow">
             Notificaciones
           </h1>
-          <button className="btn-primary">
-            <NavLink to="/patent/new">
-              Inicia Sesión
-            </NavLink>
-          </button>
+          <NavLink to="/patent/new" className="btn-primary text-sm">
+            Crear Patente
+          </NavLink>
         </div>
 
         {/* Contenido adicional */}
-        <div className="flex-1 flex"> 
+        <div className="flex-1 flex">
         </div>
       </main>
 

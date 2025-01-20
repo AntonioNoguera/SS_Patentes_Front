@@ -5,8 +5,8 @@ interface InputFieldProps {
   placeholder: string;
   value: string;
   onChange: (value: string) => void;
-  hasError?: boolean; // Estado de error controlado desde el padre
-  errorMessage?: string; // Mensaje de error controlado desde el padre
+  hasError?: boolean;
+  errorMessage?: string;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -23,7 +23,7 @@ const InputField: React.FC<InputFieldProps> = ({
   }`;
 
   return (
-    <div className="mb-4 relative">
+    <div className="mb-6 relative">
       <label className="block text-sm font-bold mb-1">{label}</label>
       <input
         type="text"
