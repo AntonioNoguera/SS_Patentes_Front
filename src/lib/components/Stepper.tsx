@@ -6,7 +6,7 @@ interface Step {
 }
 
 interface StepperProps {
-  steps: Step[]; // Lista de pasos
+  steps: Step[];
 }
 
 const Stepper: React.FC<StepperProps> = ({ steps }) => {
@@ -31,37 +31,47 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
   return (
     <div className="max-w-md mx-auto p-4">
       {/* Indicadores de pasos */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center mb-6">
         {steps.map((step, index) => (
-          <div
-            key={index}
-            className={`relative flex flex-col items-center text-center cursor-pointer ${
-              index <= currentStep ? 'text-blue-500' : 'text-gray-400'
-            }`}
-            onClick={() => handleStepClick(index)}
-          >
-            {/* Indicador del paso */}
+          <React.Fragment key={index}>
             <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                index <= currentStep
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-300 text-gray-600'
-              }`}
-            >
-              {index + 1}
-            </div>
-            {/* Etiqueta del paso */}
-            <span className="mt-2 text-sm">{step.label}</span>
+  className={`relative flex flex-col items-center text-center cursor-pointer ${
+    index <= currentStep ? 'text-blue-500' : 'text-gray-400'
+  }`}
+  onClick={() => handleStepClick(index)}
+>
+  {/* Indicador del paso */}
+  <div
+    className={`w-10 h-10 rounded-full flex items-center justify-center ${
+      index <= currentStep
+        ? 'bg-blue-500 text-white'
+        : 'bg-gray-300 text-gray-600'
+    }`}
+  >
+    {index + 1}
+  </div>
+
+  {/* Etiqueta del paso */}
+  <span
+  className="absolute -left-4 -right-4 mt-10 text-sm z-10 text-center"
+>
+  {step.label}
+</span>
+</div>
 
             {/* Línea de conexión */}
             {index < steps.length - 1 && (
               <div
-                className={`absolute top-5 left-12 h-1 w-full ${
-                  index < currentStep ? 'bg-blue-500' : 'bg-gray-300'
-                }`}
+                className={`flex-grow h-1 ${index < currentStep ? 'bg-blue-500' : 'bg-gray-300'
+                  }`}
+                style={{
+                  alignSelf: 'center', // Asegura que la línea esté centrada respecto a los pasos
+                }}
               />
             )}
-          </div>
+
+
+          </React.Fragment>
         ))}
       </div>
 
