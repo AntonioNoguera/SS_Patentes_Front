@@ -3,6 +3,7 @@ import { SnackbarProvider, useSnackbar } from "notistack";
 
 import InputField from "../../../components/InputField";
 import { NavLink } from "react-router-dom";
+import MotionImplementaton from "./../../../components/MotionImplementation";
 
 // Componente principal
 const LoginPage: React.FC = () => {
@@ -56,6 +57,7 @@ const LoginPage: React.FC = () => {
   };
 
   return (
+    <MotionImplementaton>
     <div className="flex h-screen">
       <div className="w-2/5 bg-PtahBg flex items-center justify-center">
         <h1 className="w-full text-center">Temporal</h1>
@@ -105,6 +107,7 @@ const LoginPage: React.FC = () => {
         </div>
       </div>
     </div>
+    </MotionImplementaton>
   );
 };
 

@@ -12,7 +12,7 @@ function DashBoardPage() {
 
       {/* Contenido principal */}
       <main className="flex-1 flex flex-col p-8">
-        <h1 className="text-xl font-bold text-gray-800 z-20">Creación de patentes</h1>
+        <h1 className="text-3xl font-semibold text-gray-800 z-20">Creación de patentes</h1>
         <div className="flex-1 flex">
           <PatentOptions />
         </div>

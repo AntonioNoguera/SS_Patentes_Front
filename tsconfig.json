@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".", // Necesario para que TypeScript entienda los alias
     "paths": {
-      "@pages/*": ["src/lib/pages/*"] // Mapea el alias al directorio correspondiente
+      "@pages/*": ["src/lib/pages/*"], 
+      "@components/*": ["src/lib/components/*"]
     },
     "jsx": "react-jsx", // Manejo de JSX con React
     "strict": true, // Recomendado para verificar tipos
