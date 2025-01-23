@@ -26,6 +26,10 @@ export default {
         '36': '36px',
         '16': '16px',
       },
+
+      fontWeight: {
+        thin: '100',
+      },
     },
   },
   plugins: [],

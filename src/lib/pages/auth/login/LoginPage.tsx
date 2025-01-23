@@ -14,8 +14,8 @@ const LoginPage: React.FC = () => {
   });
 
   const [errors, setErrors] = useState({
-    personalEmail: "",
-    institutionalEmail: ""
+    userLogin: "",
+    userPassword: ""
   });
 
   const validateRequired = (value: string): string | null => {
@@ -63,25 +63,25 @@ const LoginPage: React.FC = () => {
 
       <div className="w-3/5 flex items-center justify-center">
         <div className="w-full m-16 p-0">
-          <h1 className="font-bold text-center text-36">Registro</h1>
+          <h1 className="font-bold text-center text-36">Inicio de Sesión</h1>
 
           <form className="m-0 p-0" onSubmit={handleSubmit}>
             <InputField
               label="Correo personal"
               placeholder="Escribe aquí..."
               value={formData.userLogin}
-              onChange={(value) => handleInputChange("personalEmail", value)}
-              hasError={!!errors.personalEmail}
-              errorMessage={errors.personalEmail}
+              onChange={(value) => handleInputChange("userLogin", value)}
+              hasError={!!errors.userLogin}
+              errorMessage={errors.userLogin}
             />
 
             <InputField
               label="Teléfono"
               placeholder="Escribe aquí..."
               value={formData.userPassword}
-              onChange={(value) => handleInputChange("institutionalEmail", value)}
-              hasError={!!errors.institutionalEmail}
-              errorMessage={errors.institutionalEmail}
+              onChange={(value) => handleInputChange("userPassword", value)}
+              hasError={!!errors.userPassword}
+              errorMessage={errors.userPassword}
             />
 
             <div style={{ textDecoration: 'underline', textAlign: 'right' }}>
@@ -96,9 +96,9 @@ const LoginPage: React.FC = () => {
             </button>
           </form>
 
-          <p className="text-center mt-8">
+          <p className="text-center mt-8 font-regular">
             ¿No tienes una cuenta?{" "}
-            <NavLink to="/register" className="font-bold">
+            <NavLink to="/register" className="font-semibold">
               Regístrate
             </NavLink>
           </p>

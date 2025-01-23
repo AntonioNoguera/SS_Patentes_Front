@@ -35,29 +35,27 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <div
-  className={`relative flex flex-col items-center text-center cursor-pointer ${
-    index <= currentStep ? 'text-blue-500' : 'text-gray-400'
-  }`}
-  onClick={() => handleStepClick(index)}
->
-  {/* Indicador del paso */}
-  <div
-    className={`w-10 h-10 rounded-full flex items-center justify-center ${
-      index <= currentStep
-        ? 'bg-blue-500 text-white'
-        : 'bg-gray-300 text-gray-600'
-    }`}
-  >
-    {index + 1}
-  </div>
+              className={`relative flex flex-col items-center text-center cursor-pointer ${index <= currentStep ? 'text-blue-500' : 'text-gray-400'
+                }`}
+              onClick={() => handleStepClick(index)}
+            >
+              {/* Indicador del paso */}
+              <div
+                className={`w-10 h-10 rounded-full flex items-center justify-center ${index <= currentStep
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-gray-300 text-gray-600'
+                  }`}
+              >
+                {index + 1}
+              </div>
 
-  {/* Etiqueta del paso */}
-  <span
-  className="absolute -left-4 -right-4 mt-10 text-sm z-10 text-center"
->
-  {step.label}
-</span>
-</div>
+              {/* Etiqueta del paso */}
+              <span
+                className="absolute -left-4 -right-4 mt-10 text-sm z-10 text-center"
+              >
+                {step.label}
+              </span>
+            </div>
 
             {/* Línea de conexión */}
             {index < steps.length - 1 && (
@@ -97,6 +95,15 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
           Siguiente
         </button>
       </div>
+
+      <p className="font-poppins font-thin">Texto con font-weight: 100 (thin)</p>
+<p className="font-poppins font-light">Texto con font-weight: 300 (light)</p>
+<p className="font-poppins font-normal">Texto con font-weight: 400 (normal)</p>
+<p className="font-poppins font-medium">Texto con font-weight: 500 (medium)</p>
+<p className="font-poppins font-semibold">Texto con font-weight: 600 (semi-bold)</p>
+<p className="font-poppins font-bold">Texto con font-weight: 700 (bold)</p>
+<p className="font-poppins font-extrabold">Texto con font-weight: 800 (extra-bold)</p>
+<p className="font-poppins font-black">Texto con font-weight: 900 (black)</p>
     </div>
   );
 };

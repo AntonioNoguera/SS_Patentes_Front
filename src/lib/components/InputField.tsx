@@ -23,8 +23,8 @@ const InputField: React.FC<InputFieldProps> = ({
   }`;
 
   return (
-    <div className="mb-6 relative">
-      <label className="block text-sm font-bold mb-1">{label}</label>
+    <div className="mb-7 relative">
+      <label className="block text-sm font-regular mb-1">{label}</label>
       <input
         type="text"
         placeholder={placeholder}
@@ -33,7 +33,7 @@ const InputField: React.FC<InputFieldProps> = ({
         onChange={(e) => onChange(e.target.value)}
       />
       {hasError && errorMessage && (
-        <p className="absolute z-10 text-red-500 text-sm mt-1 bg-white px-2">
+        <p className="absolute z-10 text-red-500 text-sm mt-1 bg-white">
           {errorMessage}
         </p>
       )}
