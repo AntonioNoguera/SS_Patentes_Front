@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { SnackbarProvider, useSnackbar } from "notistack";
 
-import InputField from "../../../components/InputField";
+import InputField from "@components/InputField";
 import { NavLink } from "react-router-dom";
-import MotionImplementaton from "./../../../components/MotionImplementation";
-
-// Componente principal
+import MotionImplementaton from "@components/MotionImplementation";
+ 
 const RegisterPage: React.FC = () => {
   const { enqueueSnackbar } = useSnackbar();
 
