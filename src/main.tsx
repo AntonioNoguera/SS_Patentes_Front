@@ -17,9 +17,9 @@ createRoot(rootElement).render(
       anchorOrigin={{
         vertical: 'top',
         horizontal: 'right',
-      }}
+      }} 
     >
-      <App />
+      <App  />
     </SnackbarProvider>
   </BrowserRouter>
 );

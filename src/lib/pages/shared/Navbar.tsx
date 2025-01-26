@@ -6,7 +6,8 @@ function Navbar() {
   const linkStyles = "text-l font-medium text-black hover:text-gray-50";
 
   return (
-    <nav className="bg-PtahBg text-white py-2 px-0 w-full overflow-hidden px-10">
+    <nav className="bg-PtahBg text-white py-2 w-full px-10">
+      
       <div className=" w-full flex items-center">
         {/* Logo o título con flex-grow */}
         <h1 className="text-l font-medium text-black flex-grow">

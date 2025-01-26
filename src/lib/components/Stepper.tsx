@@ -96,14 +96,6 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
         </button>
       </div>
 
-      <p className="font-poppins font-thin">Texto con font-weight: 100 (thin)</p>
-<p className="font-poppins font-light">Texto con font-weight: 300 (light)</p>
-<p className="font-poppins font-normal">Texto con font-weight: 400 (normal)</p>
-<p className="font-poppins font-medium">Texto con font-weight: 500 (medium)</p>
-<p className="font-poppins font-semibold">Texto con font-weight: 600 (semi-bold)</p>
-<p className="font-poppins font-bold">Texto con font-weight: 700 (bold)</p>
-<p className="font-poppins font-extrabold">Texto con font-weight: 800 (extra-bold)</p>
-<p className="font-poppins font-black">Texto con font-weight: 900 (black)</p>
     </div>
   );
 };

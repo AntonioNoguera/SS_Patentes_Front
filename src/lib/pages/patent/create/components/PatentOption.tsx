@@ -22,9 +22,38 @@ const PatentOption: React.FC<PatentOptionProps> = ({
 
   return (
     <div
-      className="flex flex-col rounded-3xl items-center w-full mx-10 justify-between h-full bg-PtahBg hover:shadow-xl hover:bg-gray-200 p-8 cursor-pointer transition-all duration-500"
+      className="
+        bg-Ptah
+        shadow-md 
+        m-2
+        flex
+        flex-col
+        justify-center
+        items-center
+
+        justify-evenly
+
+        min-h-[65vh] 
+        w-full
+        
+        md:w-1/3
+
+        rounded-3xl 
+        items-center 
+        bg-PtahBg 
+        rounded-3xl 
+        hover:shadow-xl 
+        hover:bg-gray-200 
+        hover:-translate-y-2 
+        px-8  
+        cursor-pointer 
+        transition-all 
+        delay-75 
+        duration-300 
+      "
       onClick={handleNavigation}
     >
+
       <h2 className="text-2xl font-medium mb-2 text-center">{title}</h2>
       <img
         src={image}
@@ -33,7 +62,7 @@ const PatentOption: React.FC<PatentOptionProps> = ({
       />
       <div>
 
-        <p className="text-black text-sm text-center  pb-12">{text}</p>
+        <p className="text-black text-sm text-center mb-5">{text}</p>
 
         <p className="w-100 text-sm text-center border border-black py-3 bg-white rounded-full">
           Crear Patente

@@ -2,10 +2,10 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-PtahBg text-black py-4">
-      <div className="container mx-auto text-center">
-        <p className="text-sm font-bold">Info Universidad Facultad.</p> 
-      </div>
+    <footer className="h-16 bg-PtahBg  flex items-center justify-center text-white py-4">
+       <h1 className="text-l font-medium text-black">
+          footer, Org Facultad ETC
+        </h1>
     </footer>
   );
 }
