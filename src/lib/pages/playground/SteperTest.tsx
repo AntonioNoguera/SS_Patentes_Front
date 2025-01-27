@@ -1,9 +1,9 @@
 import React from 'react';
-import Stepper from './../../../components/Stepper';
+import Stepper from '@components/Stepper';
 
 
 function StepperTest() {
-  // Define los pasos y el contenido para cada uno
+    
   const steps = [
     { label: 'Paso 1', content: <div>Este es el contenido del Paso 1</div> },
     { label: 'Paso 2', content: <div>Este es el contenido del Paso 2</div> },

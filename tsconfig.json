@@ -3,7 +3,9 @@
     "baseUrl": ".", // Necesario para que TypeScript entienda los alias
     "paths": {
       "@pages/*": ["src/lib/pages/*"], 
-      "@components/*": ["src/lib/components/*"]
+      "@components/*": ["src/lib/components/*"],
+      "@shared/*": ["src/lib/pages/shared/*"]
+
     },
     "jsx": "react-jsx", // Manejo de JSX con React
     "strict": true, // Recomendado para verificar tipos
