@@ -1,12 +1,12 @@
 import React from "react";
 
-import Navbar from "../shared/Navbar";
-import Footer from "../shared/Footer";
+import Navbar from "../../../shared/Navbar";
+import Footer from "../../../shared/Footer";
 
 import PatentOptions from "./components/PatentOptions";
 import MotionImplementaton from "@components/MotionImplementation";
 
-function DashBoardPage() {
+function CreatePatentMenu() {
   return (
     <MotionImplementaton>
       <div className="h-screen flex flex-col">
@@ -20,4 +20,4 @@ function DashBoardPage() {
   );
 }
 
-export default DashBoardPage;
+export default CreatePatentMenu;

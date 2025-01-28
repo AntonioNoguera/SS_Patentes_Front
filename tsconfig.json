@@ -1,17 +1,20 @@
 {
   "compilerOptions": {
-    "baseUrl": ".", // Necesario para que TypeScript entienda los alias
+    "baseUrl": ".", 
     "paths": {
       "@pages/*": ["src/lib/pages/*"], 
       "@components/*": ["src/lib/components/*"],
       "@shared/*": ["src/lib/pages/shared/*"]
-
     },
-    "jsx": "react-jsx", // Manejo de JSX con React
-    "strict": true, // Recomendado para verificar tipos
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["dom", "es2015"],
+    "jsx": "react-jsx",
+    "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
