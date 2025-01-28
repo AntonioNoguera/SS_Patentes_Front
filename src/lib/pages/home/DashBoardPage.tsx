@@ -22,7 +22,7 @@ function DashBoardPage() {
         <div className="flex-1 flex">
         </div>
       </main> 
-      <Footer />
+      <Footer/>
     </div>
     </MotionImplementaton>
   );

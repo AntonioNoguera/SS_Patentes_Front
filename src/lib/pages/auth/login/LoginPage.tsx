@@ -3,7 +3,7 @@ import { SnackbarProvider, useSnackbar } from "notistack";
 
 import InputField from "@components/InputField";
 import { NavLink } from "react-router-dom";
-import MotionImplementaton from "@components//MotionImplementation";
+import MotionImplementaton from "@components/MotionImplementation";
  
 const LoginPage: React.FC = () => {
   const { enqueueSnackbar } = useSnackbar();

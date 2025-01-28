@@ -1,12 +1,13 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import {API_URL, API_TIMEOUT} from './Constants';
 
 class AxiosClient {
   private axiosInstance: AxiosInstance;
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: 'https://ruta_backend.com',
-      timeout: 10000,
+      baseURL: API_URL,
+      timeout: API_TIMEOUT,
       headers: {
         'Content-Type': 'application/json',
       },

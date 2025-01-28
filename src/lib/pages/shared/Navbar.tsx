@@ -8,13 +8,11 @@ function Navbar() {
   return (
     <nav className="bg-PtahBg text-white py-2 w-full px-10">
       
-      <div className=" w-full flex items-center">
-        {/* Logo o título con flex-grow */}
+      <div className=" w-full flex items-center"> 
         <h1 className="text-l font-medium text-black flex-grow">
           Patentes FIME
         </h1>
-
-        {/* Lista de enlaces */}
+ 
         <ul className="flex space-x-4">
           <li>
             <Link
@@ -41,8 +39,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-
-        {/* Círculo del usuario */}
+ 
         <div className="w-12 h-12 ml-10 bg-gray-100 rounded-full flex justify-center items-center text-black text-sm font-medium">
           User
         </div>
