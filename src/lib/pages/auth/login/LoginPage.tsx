@@ -4,6 +4,7 @@ import { SnackbarProvider, useSnackbar } from "notistack";
 import InputField from "@components/InputField";
 import { NavLink } from "react-router-dom";
 import MotionImplementaton from "@components/MotionImplementation";
+import { UserService } from "@services/User/UserService";
  
 const LoginPage: React.FC = () => {
   const { enqueueSnackbar } = useSnackbar();
@@ -44,14 +45,31 @@ const LoginPage: React.FC = () => {
     return valid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (isFormValid()) {
-      enqueueSnackbar("Formulario enviado correctamente.", { variant: "success" });
-      console.log("Datos enviados:", formData);
-    } else {
+    // Validamos que los campos no estén vacíos
+    if (!formData.userLogin || !formData.userPassword) {
       enqueueSnackbar("Por favor, completa todos los campos.", { variant: "error" });
+      return;
+    }
+
+    try {
+      const response = await UserService.login({
+        username: formData.userLogin,
+        password: formData.userPassword,
+      });
+
+      // Guardamos el token en localStorage
+      localStorage.setItem("token", response.token); 
+
+      enqueueSnackbar("Inicio de sesión exitoso.", { variant: "success" });
+
+      // Redirigir a la página principal o dashboard
+      //navigate("/dashboard");
+    } catch (error) {
+      console.error("Error en la autenticación:", error);
+      enqueueSnackbar("Credenciales incorrectas.", { variant: "error" });
     }
   };
 

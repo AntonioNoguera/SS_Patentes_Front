@@ -4,7 +4,8 @@
     "paths": {
       "@pages/*": ["src/lib/pages/*"], 
       "@components/*": ["src/lib/components/*"],
-      "@shared/*": ["src/lib/pages/shared/*"]
+      "@shared/*": ["src/lib/pages/shared/*"],
+      "@services/*": ["src/lib/api/services/*"],
     },
     "target": "es2015",
     "module": "esnext",

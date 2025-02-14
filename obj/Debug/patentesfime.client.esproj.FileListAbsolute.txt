@@ -1,0 +1,2 @@
+C:\Users\danya\source\repos\PatentesFIME\patentesfime.client\obj\Debug\patentesfime.client.esproj.CoreCompileInputs.cache
+C:\Users\Michael\Documents\GitHub\PatentesFIME\patentesfime.client\obj\Debug\patentesfime.client.esproj.CoreCompileInputs.cache

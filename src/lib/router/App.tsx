@@ -7,22 +7,23 @@ import DashBoardPage from "@pages/home/DashBoardPage";
 import CreatePatentMenu from "@pages/patent/create/patent_menu/CreatePatentMenu";
 import StepperTest from "@pages/playground/SteperTest";
 import CreateNewPatent from "@pages/patent/create/specific_patent/CreateNewPatent";
-import ProtectedRoute from "./components/ProtectedRoute";
-import LoginScreen from "@pages/auth/loginV1/LoginScreen";
+import ProtectedRoute from "./components/ProtectedRoute"; 
+import LandingPage from "@pages/landing/LandingPage";
 
 const App: React.FC = () => {
   return (
     <div>
       <Routes>
-        {/* Rutas públicas */}
-        <Route path="/" element={<LoginPage />} />
+        {/* Rutas públicas */} 
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
 
         {/* Rutas protegidas */}
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute protected={true}>
+            <ProtectedRoute protected={false}>
               <DashBoardPage />
             </ProtectedRoute>
           }
@@ -30,7 +31,7 @@ const App: React.FC = () => {
         <Route
           path="/patent/new"
           element={
-            <ProtectedRoute protected={true}>
+            <ProtectedRoute protected={false}>
               <CreatePatentMenu />
             </ProtectedRoute>
           }
@@ -38,7 +39,7 @@ const App: React.FC = () => {
         <Route
           path="/patent/new/:type"
           element={
-            <ProtectedRoute protected={true}>
+            <ProtectedRoute protected={false}>
               <CreateNewPatent />
             </ProtectedRoute>
           }
@@ -52,14 +53,6 @@ const App: React.FC = () => {
             </ProtectedRoute>
           }
         />
-
-        <Route
-          path="/loginv1"
-          element={
-            <ProtectedRoute protected={false}>
-              <LoginScreen />
-            </ProtectedRoute>
-          } />
 
       </Routes>
 
