@@ -1,0 +1,15 @@
+@import "@fontsource/poppins";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="text"]:focus {
+  @apply outline-none ring-0 ring-black border-black bg-gray-50;
+}
+
+.btn-primary {
+  @apply px-4 py-2 bg-orange100 text-white rounded-2xl hover:bg-orange86;
+}
+ 
