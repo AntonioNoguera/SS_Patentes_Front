@@ -16,10 +16,19 @@ export default {
 
       colors: { 
         PtahBg: '#D9D9D9',
+        aqua100: "#0195A9",
+        aqua26: "#BCE3E8",
+        orange100: "#F67102",
+        orange86: "#FB9637",
+
+        orange50: "#FFC08A",
+        purple100: "#551BB3",
+        darkGray: "#2F2E30",
         inputBorders : '#CBD2E0',
 
+        optionCardBg: "#FAFAFA",
         activeBtn : '#959494',
-        hoverBtn : '#595959'
+        hoverBtn : '#595959',
       },
 
       fontSize: {

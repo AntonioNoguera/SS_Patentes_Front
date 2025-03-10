@@ -6,6 +6,7 @@
       "@components/*": ["src/lib/components/*"],
       "@shared/*": ["src/lib/pages/shared/*"],
       "@services/*": ["src/lib/api/services/*"],
+      "@assets/*": ["src/assets/*"],
     },
     "target": "es2015",
     "module": "esnext",
