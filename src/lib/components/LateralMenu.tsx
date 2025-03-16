@@ -24,7 +24,7 @@ const LateralMenu: React.FC = () => {
         Crear Patente
       </button>
       
-      <NavLink to="/dashboard/create" className={getLinkStyles}>
+      <NavLink to="/dashboard/new-patent" className={getLinkStyles}>
         <BsFillHouseDoorFill className="inline-block mr-4 text-4xl" />
         <span className="text-base">Inicio</span>
       </NavLink>
@@ -36,13 +36,13 @@ const LateralMenu: React.FC = () => {
       </NavLink>
       <hr className="h-0.5 bg-gray-400 border-none" />
       
-      <NavLink to="/patent/process" className={getLinkStyles}>
+      <NavLink to="/dashboard/in-process" className={getLinkStyles}>
         <AiFillClockCircle className="inline-block mr-4 text-4xl" />
         <span className="text-base text-left">En proceso</span>
       </NavLink>
       <hr className="h-0.5 bg-gray-400 border-none" />
       
-      <NavLink to="/dashboard/list" className={getLinkStyles}>
+      <NavLink to="/dashboard/my-documents" className={getLinkStyles}>
         <IoIosDocument className="inline-block mr-3 text-5xl" />
         <span className="text-base inline-block text-left">Mis Documentos</span>
       </NavLink>
