@@ -97,7 +97,7 @@ const LoginPage: React.FC = () => {
                             />
 
                             <InputField
-                                label="Teléfono"
+                                label="Contraseña"
                                 placeholder="Escribe aquí..."
                                 value={formData.userPassword}
                                 onChange={(value) => handleInputChange("userPassword", value)}

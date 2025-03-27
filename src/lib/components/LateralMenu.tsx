@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { BsFillHouseDoorFill, BsEyeFill } from "react-icons/bs";
@@ -8,6 +9,7 @@ type NavLinkProps = {
   isActive: boolean;
   isPending: boolean;
 };
+
 
 const LateralMenu: React.FC = () => {
   const location = useLocation();

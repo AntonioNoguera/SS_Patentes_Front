@@ -77,6 +77,11 @@ const App: React.FC = () => {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/*"
+          element={<h1>No existe esta ruta</h1>}
+        />
+
       </Routes>
     </div>
   );
