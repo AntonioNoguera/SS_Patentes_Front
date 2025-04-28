@@ -3,7 +3,7 @@ import React from "react";
 interface InputFieldProps {
     label: string;
     placeholder: string;
-    value: string;
+    value: string | number;
     onChange: (value: string) => void;
     hasError?: boolean;
     errorMessage?: string;

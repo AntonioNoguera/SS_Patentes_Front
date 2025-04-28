@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 
-
 import logo from "@assets/MKALogoWritting.png";
+import "@i18n";
+import { useTranslation } from "react-i18next";
 
 function LandingNavbar() {
 
-  const linkStyles = "text-l font-regular text-gray hover:text-aqua100";
+  const linkStyles = "inline-block text-l font-regular text-gray hover:text-aqua100 transition-transform duration-300 hover:scale-110";
+
+  const {t, i18n} = useTranslation("landing_page");
 
   return (
     <nav className="bg-white py-2 w-full px-10">
@@ -16,27 +19,21 @@ function LandingNavbar() {
  
         <ul className="flex space-x-10">
           <li>
-            <Link
-              to="/"
-              className={linkStyles}
-            >
-              MKA Writing
+            <Link to="/" className={linkStyles} >
+              {t("writting_link")}
             </Link>
           </li>
+          
           <li>
-            <Link
-              to="/about"
-              className={linkStyles}
+            <Link to="/" className={linkStyles}
             >
-              MKA Search
+              {t("search_link")}
             </Link>
           </li>
+
           <li>
-            <Link
-              to="/contact"
-              className={linkStyles}
-            >
-              MKA Intelligence
+            <Link to="/" className={linkStyles} >
+              {t("intelligence_link")}
             </Link>
           </li>
         </ul>

@@ -7,6 +7,7 @@
       "@shared/*": ["src/lib/pages/shared/*"],
       "@services/*": ["src/lib/api/services/*"],
       "@assets/*": ["src/assets/*"],
+      "@i18n": ["src/lib/localization/i18n.ts"]
     },
     "target": "es2015",
     "module": "esnext",

@@ -79,7 +79,7 @@ const LoginPage: React.FC = () => {
             <div className="flex h-screen">
                 <div className="w-1/2 bg-[url(./src/assets/writingBgImage.jpg)] bg-cover bg-right flex items-center justify-center -z-10">
                     <div className="w-1/2 h-full bg-aqua100 absolute opacity-50 z-0"></div>
-                    <img className="w-3/6 h-2/6 z-10" src="./src/assets/MKALogoWritting.png" alt="Logo MKA Writting" />
+                    <img className="w-3/6 z-10" src="./src/assets/MKALogoWritting.png" alt="Logo MKA Writting" />
                 </div>
 
                 <div className="w-1/2 flex items-center justify-center">

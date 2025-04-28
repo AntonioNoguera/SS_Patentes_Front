@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import LoginPage from "@pages/auth/login/LoginPage";
 import RegisterPage from "@pages/auth/register/RegisterPage";
@@ -12,7 +12,27 @@ import CreatePatent from "@pages/patent/create/CreatePatent";
 import PatentStatus from "@pages/patent/status/PatentStatus";
 import PatentInProcess from "@pages/patent/in_process/PatentsInProcess";
 
+import "@i18n";
+import { useTranslation } from "react-i18next";
+
 const App: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const [languageReady, setLanguageReady] = useState(false);
+
+  useEffect(() => {
+    const changeLang = async () => {
+      await i18n.changeLanguage(navigator.language);
+      setLanguageReady(true); // cuando esté listo
+    };
+
+    changeLang();
+  }, []);
+
+  if (!languageReady) {
+    // Puedes mostrar un loading sencillo o nada mientras cambia idioma
+    return <div>Cargando...</div>;
+  }
+
   return (
     <div>
       <Routes>
@@ -20,7 +40,6 @@ const App: React.FC = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-
         {/* Rutas protegidas */}
         <Route
           path="dashboard"
@@ -30,6 +49,9 @@ const App: React.FC = () => {
             </ProtectedRoute>
           }
         >
+
+          <Route index element={<Navigate to="new-patent" replace />} />
+
           <Route
             path="new-patent"
             element={
@@ -49,7 +71,7 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="in-process" 
+            path="in-process"
             element={
               <ProtectedRoute protected={false}>
                 <PatentInProcess />

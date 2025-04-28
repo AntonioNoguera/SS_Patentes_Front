@@ -12,6 +12,7 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "src/lib/pages/shared"), 
       "@services": path.resolve(__dirname, "src/lib/api/services"),
       "@assets": path.resolve(__dirname, "src/assets"),
+      "@i18n": path.resolve(__dirname, "src/lib/localization/i18n.ts")
     },
   },
   server: {
