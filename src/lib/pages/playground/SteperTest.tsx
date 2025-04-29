@@ -72,11 +72,7 @@ const Table: React.FC = () => {
     { id: 2, title: "Ana", type: "30", numberOfReviews: 5, status: "Active", newComments: false },
     { id: 3, title: "Luis", type: "28", numberOfReviews: 8, status: "Inactive", newComments: true },
     { id: 4, title: "Carlos", type: "22", numberOfReviews: 12, status: "Pending", newComments: false },
-    { id: 5, title: "Marta", type: "35", numberOfReviews: 7, status: "Active", newComments: true },
-    { id: 6, title: "Elena", type: "27", numberOfReviews: 9, status: "Inactive", newComments: false },
-    { id: 7, title: "Pedro", type: "40", numberOfReviews: 3, status: "Active", newComments: true },
-    { id: 8, title: "Sofía", type: "29", numberOfReviews: 6, status: "", newComments: false },
-    { id: 9, title: "Diego", type: "31", numberOfReviews: 11, status: "Pending", newComments: true }, 
+    { id: 5, title: "Marta", type: "35", numberOfReviews: 7, status: "Active", newComments: true }, 
   ];
 
   return (

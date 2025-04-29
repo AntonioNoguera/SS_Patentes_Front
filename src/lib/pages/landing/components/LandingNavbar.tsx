@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import logo from "@assets/MKALogoWritting.png";
+
 import "@i18n";
 import { useTranslation } from "react-i18next";
 

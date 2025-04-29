@@ -3,6 +3,11 @@ import { NavLink, useLocation } from "react-router-dom";
 import { BsFillHouseDoorFill, BsEyeFill } from "react-icons/bs";
 import { AiFillClockCircle } from "react-icons/ai";
 import { IoIosDocument } from "react-icons/io";
+import { FaPlus } from "react-icons/fa"; // Símbolo de más (+)
+
+
+import "@i18n";
+import { useTranslation } from "react-i18next";
 
 type NavLinkProps = {
   isActive: boolean;
@@ -27,7 +32,10 @@ const DashboardSidebar: React.FC = () => {
     setShowLabels(prev => !prev);
   };
 
+  const {t, i18n} = useTranslation("dashboard_sidebar");
+
   return (
+
     <div
       className={`bg-white p-4 flex flex-col gap-y-2 rounded-tr-2xl transition-[width] duration-300 ${showLabels ? "w-60" : "w-20"
         }`}
@@ -38,9 +46,11 @@ const DashboardSidebar: React.FC = () => {
         onClick={toggleLabels}
       >
         {showLabels ? (
-          <span className="text-base transition-all duration-300">Mostrar Menos</span>
+          <span className="text-base transition-all duration-300">
+            {t("show_less_info")}
+          </span>
         ) : (
-          <BsEyeFill className="text-2xl transition-all duration-300" />
+          <FaPlus className="text-2xl transition-all duration-300" />
         )}
       </button>
 
@@ -51,7 +61,7 @@ const DashboardSidebar: React.FC = () => {
           className={`overflow-hidden whitespace-nowrap transition-all duration-300 ${showLabels ? "opacity-100 scale-100 ml-4" : "opacity-0 scale-0 w-0 ml-0"
             }`}
         >
-          Inicio
+          {t("home_tab")}
         </span>
       </NavLink>
       <hr className="h-0.5 bg-gray-400 border-none" />
@@ -62,7 +72,7 @@ const DashboardSidebar: React.FC = () => {
           className={`overflow-hidden whitespace-nowrap transition-all duration-300 ${showLabels ? "opacity-100 scale-100 ml-4" : "opacity-0 scale-0 w-0 ml-0"
             }`}
         >
-          Estados
+          {t("status_tab")}
         </span>
       </NavLink>
       <hr className="h-0.5 bg-gray-400 border-none" />
@@ -73,7 +83,7 @@ const DashboardSidebar: React.FC = () => {
           className={`overflow-hidden whitespace-nowrap transition-all duration-300 ${showLabels ? "opacity-100 scale-100 ml-4" : "opacity-0 scale-0 w-0 ml-0"
             }`}
         >
-          En proceso
+          {t("in_progress_tab")}
         </span>
       </NavLink>
       <hr className="h-0.5 bg-gray-400 border-none" />
@@ -84,7 +94,7 @@ const DashboardSidebar: React.FC = () => {
           className={`overflow-hidden whitespace-nowrap transition-all duration-300 ${showLabels ? "opacity-100 scale-100 ml-3" : "opacity-0 scale-0 w-0 ml-0"
             }`}
         >
-          Mis Documentos
+          {t("my_documents_tab")}
         </span>
       </NavLink>
     </div>

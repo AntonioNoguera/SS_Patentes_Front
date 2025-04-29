@@ -1,5 +1,4 @@
-import MotionImplementaton, { Direction } from "@components/MotionImplementation";
-import UserInfoComponent from "../../../components/UserInfoComponent";
+import MotionImplementaton, { Direction } from "@components/MotionImplementation"; 
 
 function ListPatents() {
   return (

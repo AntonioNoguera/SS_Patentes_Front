@@ -14,6 +14,9 @@ import PatentInProcess from "@pages/patent/in_process/PatentsInProcess";
 
 import "@i18n";
 import { useTranslation } from "react-i18next";
+import UserNotificationPage from "@pages/home/user-actions/notifications/UserNotificationPage";
+import UserSearcherPage from "@pages/home/user-actions/searcher/UserSearcherPage";
+import UserHelpPage from "@pages/home/user-actions/help/UserHelpPage";
 
 const App: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -79,14 +82,39 @@ const App: React.FC = () => {
             }
           />
 
-          <Route
-            path="my-documents"
+          <Route path="my-documents" element={
+            <ProtectedRoute protected={false}>
+              <ListPatents />
+            </ProtectedRoute>
+          }
+          />
+
+          {/** USER BAR */}
+          <Route path="notifications"
             element={
               <ProtectedRoute protected={false}>
-                <ListPatents />
+                <UserNotificationPage />
               </ProtectedRoute>
             }
           />
+
+          <Route path="search"
+            element={
+              <ProtectedRoute protected={false}>
+                <UserSearcherPage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route path="help-center"
+            element={
+              <ProtectedRoute protected={false}>
+                <UserHelpPage />
+              </ProtectedRoute>
+            }
+          />
+
+
 
         </Route>
 

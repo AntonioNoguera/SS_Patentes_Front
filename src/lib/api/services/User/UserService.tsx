@@ -4,8 +4,6 @@ import { LoginResponse } from './Interfaces/Login/LoginResponse';
 import { RegisterResponse } from './Interfaces/Register/RegisterRequest';
 import { RegisterRequest } from './Interfaces/Register/RegisterResponse';
 
- 
-
 export class UserService {
   static async deleteUser(userId: number): Promise<void> {
     return await apiService.delete<void>(`/users/${userId}`);

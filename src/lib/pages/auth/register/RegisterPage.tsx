@@ -6,6 +6,9 @@ import MotionImplementaton from "@components/MotionImplementation";
 import { UserService } from "@services/User/UserService";
 import { AnimatePresence, motion } from "framer-motion";
 
+import "@i18n";
+import { useTranslation } from "react-i18next";
+
 type FormData = {
   firstName: string;
   secondName: string;
@@ -54,29 +57,6 @@ const initialFormData: FormData = {
 
 type FormField = keyof FormData;
 
-// Mapeo de keys a labels personalizados
-const fieldLabels: Record<FormField, string> = {
-  firstName: "Nombre",
-  secondName: "Segundo Nombre",
-  firstLastName: "Apellido Paterno",
-  secondLastName: "Apellido Materno",
-  curp: "CURP",
-  employeeNumber: "Número de Empleado",
-  rollNumber: "Número de Matrícula",
-  birthDate: "Fecha de Nacimiento",
-  birthCity: "Ciudad de Nacimiento",
-  birthState: "Estado de Nacimiento",
-  major: "Carrera",
-  institutionalEmail: "Correo Institucional",
-  personalEmail: "Correo Personal",
-  phoneNumber: "Número de Teléfono",
-  gender: "Género",
-  maritalSituation: "Estado Civil",
-  academicGrade: "Grado Académico",
-  digitalSignature: "Firma Digital",
-  password: "Contraseña",
-  passwordConfirm: "Confirma Contraseña"
-};
 
 const steps: FormField[][] = [
   ["firstName", "secondName", "firstLastName", "secondLastName"],
@@ -131,22 +111,25 @@ const RegisterPage: React.FC = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!validateStep()) {
-      enqueueSnackbar("Por favor, completa todos los campos del último paso.", { variant: "error" });
-      return;
-    }
+  const handleSubmit = async () => {
+    // e.preventDefault();
+    // if (!validateStep()) {
+    //   enqueueSnackbar("Por favor, completa todos los campos del último paso.", { variant: "error" });
+    //   return;
+    // }
 
-    try {
-      const response = await UserService.register(formData);
-      localStorage.setItem("token", response.token);
-      enqueueSnackbar("Registro exitoso.", { variant: "success" });
-      //navigate("/dashboard");
-    } catch (error) {
-      console.error("Error en el registro:", error);
-      enqueueSnackbar("Error al registrar usuario.", { variant: "error" });
-    }
+    
+    enqueueSnackbar("Registro exitoso.", { variant: "success" });
+
+    // try {
+    //   const response = await UserService.register(formData);
+    //   localStorage.setItem("token", response.token);
+    //   enqueueSnackbar("Registro exitoso.", { variant: "success" });
+    //   //navigate("/dashboard");
+    // } catch (error) {
+    //   console.error("Error en el registro:", error);
+    //   enqueueSnackbar("Error al registrar usuario.", { variant: "error" });
+    // }
   };
 
   // Definir las variantes de animación basadas en la dirección
@@ -165,7 +148,11 @@ const RegisterPage: React.FC = () => {
     })
   };
 
+
+  const { t, i18n } = useTranslation("register");
+
   return (
+
     <MotionImplementaton>
       <div className="flex h-screen overflow-x-hidden">
         {/* Imagen lateral */}
@@ -179,7 +166,7 @@ const RegisterPage: React.FC = () => {
           <div className="w-full m-16 p-0 overflow-hidden">
             <h1 className="font-bold text-center mb-6 text-36">Registro</h1>
 
-            <form className="m-0 p-0" onSubmit={handleSubmit}>
+            <form className="m-0 p-0">
               {/* Contenedor con altura fija para mantener la estructura */}
               <div className="relative w-full overflow-hidden" style={{ minHeight: "240px" }}>
                 <AnimatePresence mode="wait" custom={direction}>
@@ -196,8 +183,8 @@ const RegisterPage: React.FC = () => {
                     {steps[currentStep].map((field) => (
                       <InputField
                         key={field}
-                        label={fieldLabels[field]} // Usando el label personalizado aquí
-                        placeholder={`Escribe ${fieldLabels[field].toLowerCase()} aquí...`} // También puedes personalizar el placeholder
+                        label={t(field)}
+                        placeholder={`Escribe ${t(field).toLowerCase()} aquí...`}
                         value={formData[field]}
                         onChange={(value) => handleInputChange(field, value)}
                         hasError={!!errors[field]}
@@ -207,39 +194,36 @@ const RegisterPage: React.FC = () => {
                   </motion.div>
                 </AnimatePresence>
               </div>
-
+ 
               <div className="flex justify-between mt-8 relative z-10">
                 <button
                   type="button"
                   className={`btn-primary !bg-activeBtn !px-20 transition-all duration-300 ${currentStep === 0 ? "invisible" : "visible"}`}
                   onClick={handleBack}
                 >
-                  Atrás
+                  {t("previousAction")}
                 </button>
 
-                {currentStep < steps.length - 1 ? (
+                {currentStep < steps.length -1 ? (
                   <button
                     type="button"
                     className="btn-primary !px-20"
                     onClick={handleNext}
                   >
-                    Siguiente
+                    {t("incomingAction")}
                   </button>
                 ) : (
-                  <button
-                    type="submit"
-                    className="btn-primary !px-20"
-                  >
-                    Enviar
+                  <button type="button" onClick = {handleSubmit} className="btn-primary !px-20">
+                    {t("loginAction")}
                   </button>
                 )}
               </div>
             </form>
 
             <p className="text-center mt-8">
-              ¿Ya tienes una cuenta?{" "}
+              {t("alreadyUser") + " "}
               <NavLink to="/login" className="font-bold text-purple100">
-                Inicia Sesión
+                {t("alreadyUserAction")}
               </NavLink>
             </p>
           </div>

@@ -6,6 +6,9 @@ import { NavLink, useNavigate } from "react-router-dom";
 import MotionImplementaton from "@components/MotionImplementation";
 import { UserService } from "@services/User/UserService";
 
+import "@i18n";
+import { useTranslation } from "react-i18next";
+
 const LoginPage: React.FC = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate();
@@ -74,6 +77,8 @@ const LoginPage: React.FC = () => {
         }
     };
 
+    const {t, i18n} = useTranslation("log_in");
+
     return (
         <MotionImplementaton>
             <div className="flex h-screen">
@@ -84,12 +89,12 @@ const LoginPage: React.FC = () => {
 
                 <div className="w-1/2 flex items-center justify-center">
                     <div className="w-full m-16 p-0">
-                        <h1 className="font-bold text-center text-36 mb-10">Inicio de Sesión</h1>
+                        <h1 className="font-bold text-center text-36 mb-10">{t("title")}</h1>
 
                         <form className="m-0 p-0 flex flex-col" onSubmit={handleSubmit}>
                             <InputField
-                                label="Correo personal"
-                                placeholder="Escribe aquí..."
+                                label={t("email_label")}
+                                placeholder={t("email_placeholder")}
                                 value={formData.userLogin}
                                 onChange={(value) => handleInputChange("userLogin", value)}
                                 hasError={!!errors.userLogin}
@@ -97,8 +102,8 @@ const LoginPage: React.FC = () => {
                             />
 
                             <InputField
-                                label="Contraseña"
-                                placeholder="Escribe aquí..."
+                                label={t("password_label")}
+                                placeholder={t("password_placeholder")}
                                 value={formData.userPassword}
                                 onChange={(value) => handleInputChange("userPassword", value)}
                                 hasError={!!errors.userPassword}
@@ -106,21 +111,21 @@ const LoginPage: React.FC = () => {
                             />
 
                             <div className="text-gray-500 underline text-right">
-                                Olvidé mi contraseña
+                                {t("forgot_password_link")}
                             </div>
 
                             <button
                                 type="submit"
                                 className="btn-primary w-1/3 mx-auto mt-8"
                             >
-                                Enviar
+                                {t("action_send")}
                             </button>
                         </form>
 
                         <p className="text-center mt-8 font-regular text-gray-500">
-                            ¿No tienes una cuenta?{" "}
+                            {t("without_account") + " "}
                             <NavLink to="/register" className="font-semibold text-purple100">
-                                Regístrate
+                                {t("action_register")}
                             </NavLink>
                         </p>
                     </div>

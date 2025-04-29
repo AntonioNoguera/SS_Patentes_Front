@@ -24,7 +24,7 @@ const PatentOptions: React.FC = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col md:flex-row items-center justify-center px-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+    <div className="w-full flex flex-col md:flex-row items-center justify-center px-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8 2xl:gap-24">
       {boxesData.map((box, index) => (
         <PatentOption
           key={index}
