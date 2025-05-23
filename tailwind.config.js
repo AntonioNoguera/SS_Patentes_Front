@@ -15,7 +15,7 @@ export default {
       },
 
       colors: { 
-        PtahBg: '#D9D9D9',
+        PtahBg: '#EFEFEF',
         aqua100: "#0195A9",
         aqua26: "#bde4e9",
         orange100: "#F67102",

@@ -1,17 +1,18 @@
+
+
+
+
 import React, { useEffect, useState } from 'react'
 import MotionImplementation, { Direction } from '@components/MotionImplementation'
-import {
-  Patent,
-} from '@services/Patent/Interfaces/PatentResponse'
-import { patentService } from '@services/Patent/PatentService'
-import PatentToolbar from './components/PatentToolbar'
-import PatentPagination from './components/PatentPagination'
-import PatentGrid from './components/PatentGrid'
-import PatentList from './components/PatentList'
+import { Patent, } from '@services/Patent/Interfaces/PatentResponse'
+import { patentService } from '@services/Patent/PatentService' 
+import PatentToolbar from '../in_process/components/PatentToolbar'
+import PatentPagination from '../in_process/components/PatentPagination'
+import PatentGrid from '../in_process/components/PatentGrid'
+import PatentList from '../in_process/components/PatentList'
 
 
-
-export default function PatentInProcess() {
+export default function MyDocuments() {
   const [patentes, setPatentes] = useState<Patent[]>([])
   const [error, setError] = useState<string | null>(null)
   const [search, setSearch] = useState('')
@@ -62,7 +63,7 @@ export default function PatentInProcess() {
     <MotionImplementation direction={Direction.RIGHT}>
       <section className="h-full flex flex-col gap-5 p-5">
         <h1 className="text-orange100 text-3xl font-semibold">
-          Patentes en progreso
+          Mis Documentos
         </h1>
 
         <div className='flex flex-row justify-between'>
@@ -81,9 +82,7 @@ export default function PatentInProcess() {
             }}
             isGridView={isGridView}
           />
-
-
-
+          
           <PatentPagination
             page={page}
             totalPages={totalPages}

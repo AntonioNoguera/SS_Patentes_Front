@@ -7,8 +7,8 @@ import DashBoardPage from "@pages/home/DashBoardPage";
 import StepperTest from "@pages/playground/SteperTest";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LandingPage from "@pages/landing/LandingPage";
-import ListPatents from "@pages/patent/my_documents/ListPatents";
-import CreatePatent from "@pages/patent/create/CreatePatent";
+import ListPatents from "@pages/patent/my_documents/MyDocuments";
+import CreatePatent from "@pages/patent/menu/CreatePatent";
 import PatentStatus from "@pages/patent/status/PatentStatus";
 import PatentInProcess from "@pages/patent/in_process/PatentsInProcess";
 
@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 import UserNotificationPage from "@pages/home/user-actions/notifications/UserNotificationPage";
 import UserSearcherPage from "@pages/home/user-actions/searcher/UserSearcherPage";
 import UserHelpPage from "@pages/home/user-actions/help/UserHelpPage";
+import MyDocuments from "@pages/patent/my_documents/MyDocuments";
 
 const App: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -84,7 +85,7 @@ const App: React.FC = () => {
 
           <Route path="my-documents" element={
             <ProtectedRoute protected={false}>
-              <ListPatents />
+              <MyDocuments />
             </ProtectedRoute>
           }
           />
